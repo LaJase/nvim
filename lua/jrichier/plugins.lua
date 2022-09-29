@@ -34,9 +34,9 @@ augroup end
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
-  use { 'wbthomason/packer.nvim' }
+  use { "wbthomason/packer.nvim" }
 
-  use { 'nvim-lua/plenary.nvim' } -- Common utilities
+  use { "nvim-lua/plenary.nvim" } -- Common utilities
   use { "kyazdani42/nvim-web-devicons"}
 
   use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
@@ -44,13 +44,13 @@ return require('packer').startup(function(use)
   use { "JoosepAlviste/nvim-ts-context-commentstring" }
   use { "kyazdani42/nvim-tree.lua" }
   use { "nvim-lualine/lualine.nvim" }
-  use { 'akinsho/nvim-bufferline.lua' } -- To have a nice buffer line}
-  use { 'onsails/lspkind-nvim' } -- vscode-like pictograms
+  use { "akinsho/nvim-bufferline.lua" } -- To have a nice buffer line}
+  use { "onsails/lspkind-nvim" } -- vscode-like pictograms
   use { "akinsho/toggleterm.nvim" }
   use { "ahmedkhalf/project.nvim" }
   use { "lewis6991/impatient.nvim" }
   use { "goolord/alpha-nvim" }
-  use { 'windwp/nvim-ts-autotag' }
+  use { "windwp/nvim-ts-autotag" }
 
   -- doesnt seems to work with my actual theme
   use { "RRethy/vim-illuminate"}
@@ -59,6 +59,7 @@ return require('packer').startup(function(use)
   use { "folke/tokyonight.nvim" }
   use { "lunarvim/darkplus.nvim" }
   use { "navarasu/onedark.nvim" }
+  --[[ use { "olimorris/onedarkpro.nvim" } ]]
   --[[ use { "monsonjeremy/onedark.nvim" } ]]
 
   -- cmp plugins
@@ -80,7 +81,7 @@ return require('packer').startup(function(use)
 
   -- get the things done
   use { "neovim/nvim-lspconfig"} -- enable LSP
-  use { 'glepnir/lspsaga.nvim' }
+  use { "glepnir/lspsaga.nvim" }
   use { "jose-elias-alvarez/null-ls.nvim"} -- for formatters and linters
   use { "folke/trouble.nvim" }
 
@@ -96,7 +97,12 @@ return require('packer').startup(function(use)
   -- Git
   use { "lewis6991/gitsigns.nvim"}
 
-  use 'norcalli/nvim-colorizer.lua'
+  -- To have color translation
+  use "norcalli/nvim-colorizer.lua"
+
+  -- lets tryp thos pluggins
+  use { "karb94/neoscroll.nvim" }
+  use { "folke/zen-mode.nvim" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
