@@ -27,13 +27,14 @@ vim.cmd [[packadd packer.nvim]]
 vim.cmd [[
 augroup packer_user_config
 autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerSync
+autocmd BufWritePost ~/.config/nvim/lua/*/plugins.lua source <afile> | PackerSync
 augroup end
 ]]
 
 return packer.startup(function(use)
   -- Packer can manage itself
   use { "wbthomason/packer.nvim" }
+
 
   use { "nvim-lua/plenary.nvim" } -- Common utilities
   use { "kyazdani42/nvim-web-devicons"}
