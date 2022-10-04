@@ -56,6 +56,10 @@ nvim_tree.setup {
     ignore = true,
     timeout = 500,
   },
+  filters = {
+    dotfiles = false,
+    custom = { ".vscode" },
+  },
   view = {
     width = 35,
     hide_root_folder = false,
