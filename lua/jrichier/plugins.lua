@@ -81,7 +81,7 @@ return packer.startup(function(use)
 
   -- get the things done
   use { "neovim/nvim-lspconfig"} -- enable LSP
-  use { "glepnir/lspsaga.nvim" }
+  use { "glepnir/lspsaga.nvim" , commit = 'ae099d5844b005cec66a66ab30a44d3bf8867af9',}
   use { "jose-elias-alvarez/null-ls.nvim"} -- for formatters and linters
   use { "folke/trouble.nvim" }
 
@@ -103,6 +103,7 @@ return packer.startup(function(use)
   -- lets tryp thos pluggins
   use { "karb94/neoscroll.nvim" }
   use { "folke/zen-mode.nvim" }
+  use { "lukas-reineke/indent-blankline.nvim" , disable = true}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

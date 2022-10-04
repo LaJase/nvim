@@ -53,6 +53,24 @@ protocol.CompletionItemKind = {
 }
 
 
+local function filter(arr, fn)
+  if type(arr) ~= "table" then
+    return arr
+  end
+
+  local filtered = {}
+  for k, v in pairs(arr) do
+    if fn(v, k, arr) then
+      table.insert(filtered, v)
+    end
+  end
+
+  return filtered
+end
+
+local function filterReactDTS(value)
+  return string.match(value.targetUri, '%.d.ts') == nil
+end
 
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').update_capabilities(
@@ -69,7 +87,20 @@ nvim_lsp.tsserver.setup {
     on_attach(client, bufnr)
     client.server_capabilities.documentFormattingProvider = false
   end,
-  capabilities = capabilities
+  capabilities = capabilities,
+  -- there are some issues with tsserver, this avoid jump to definition in node_modules files
+  handlers = {
+    ['textDocument/definition'] = function(err, result, method, ...)
+      if vim.tbl_islist(result) and #result > 1 then
+        print("result is list")
+        local filtered_result = filter(result, filterReactDTS)
+        print("error with filter")
+        return vim.lsp.handlers['textDocument/definition'](err, filtered_result, method, ...)
+      end
+
+      vim.lsp.handlers['textDocument/definition'](err, result, method, ...)
+    end
+  },
 }
 
 nvim_lsp.sourcekit.setup {
@@ -112,15 +143,6 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
---[[ vim.diagnostic.config({ ]]
---[[   virtual_text = { ]]
---[[     prefix = '●' ]]
---[[   }, ]]
---[[   update_in_insert = true, ]]
---[[   float = { ]]
---[[     source = "always", -- Or "if_many" ]]
---[[   }, ]]
---[[ }) ]]
 vim.diagnostic.config({
   virtual_text = false,
   update_in_insert = false,
