@@ -2,7 +2,7 @@ local status, onedark = pcall(require, "onedark")
 if (not status) then return end
 
 onedark.setup({
-  style = 'darker',
+  style = 'dark',
   colors = {
     light_grey = "#7a818e",
     orange = "#cc9057",
