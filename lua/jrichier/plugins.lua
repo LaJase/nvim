@@ -56,11 +56,10 @@ return packer.startup(function(use)
   use { "RRethy/vim-illuminate"}
 
   -- Colorschemes
-  use { "folke/tokyonight.nvim" }
-  use { "lunarvim/darkplus.nvim" }
   use { "navarasu/onedark.nvim" }
-  --[[ use { "olimorris/onedarkpro.nvim" } ]]
-  --[[ use { "monsonjeremy/onedark.nvim" } ]]
+  use { "rafamadriz/neon" }
+  use { "olimorris/onedarkpro.nvim", disable = true, }
+  --[[ use { "monsonjeremy/onedark.nvim", disable = true, } ]]
 
   -- cmp plugins
   use { "hrsh7th/cmp-path" } -- path completions
@@ -104,6 +103,16 @@ return packer.startup(function(use)
   use { "karb94/neoscroll.nvim" }
   use { "folke/zen-mode.nvim" }
   use { "lukas-reineke/indent-blankline.nvim" , disable = true}
+
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
