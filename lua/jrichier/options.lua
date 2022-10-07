@@ -45,6 +45,6 @@ vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 vim.opt.autoindent = true
 vim.opt.smartindent = true
-vim.opt.scrolloff = 25
+vim.opt.scrolloff = 8
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.hidden = true

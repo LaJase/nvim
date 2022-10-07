@@ -44,7 +44,7 @@ return packer.startup(function(use)
   use { "JoosepAlviste/nvim-ts-context-commentstring" }
   use { "kyazdani42/nvim-tree.lua" }
   use { "nvim-lualine/lualine.nvim" }
-  use { "akinsho/nvim-bufferline.lua" } -- To have a nice buffer line}
+  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'} -- To have a nice buffer line}
   use { "onsails/lspkind-nvim" } -- vscode-like pictograms
   use { "akinsho/toggleterm.nvim" }
   use { "ahmedkhalf/project.nvim" }
@@ -101,7 +101,7 @@ return packer.startup(function(use)
 
   -- lets tryp thos pluggins
   use { "karb94/neoscroll.nvim" }
-  use { "folke/zen-mode.nvim" }
+  use { "Pocco81/true-zen.nvim" }
   use { "lukas-reineke/indent-blankline.nvim" , disable = true}
 
   use({
@@ -113,6 +113,8 @@ return packer.startup(function(use)
       })
     end
   })
+
+  use { "wellle/targets.vim", event = "CursorMoved" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
