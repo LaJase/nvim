@@ -25,6 +25,15 @@ require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
     }
+    use {
+        'akinsho/bufferline.nvim',
+        tag = "v3.*",
+        requires = 'nvim-tree/nvim-web-devicons',
+        config = function()
+            require('bufferline').setup{}
+        end
+    }
+    use {'nvim-lualine/lualine.nvim'} -- Fancier statusline
 
     -- Treesitter stuff
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -33,6 +42,17 @@ require('packer').startup(function(use)
     -- Git Stuff
     use 'tpope/vim-fugitive'
     use "lewis6991/gitsigns.nvim"
+
+    -- usefull stuff
+    use {
+        'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
+        config = function() require("Comment").setup {} end
+    }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+    use 'tpope/vim-surround'
 
     if is_bootstrap then
         require('packer').sync()
