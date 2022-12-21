@@ -11,6 +11,12 @@ require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim' 
 
+    -- Treesitter stuff
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+
+    -- Fuzzy Finder (files, lsp, etc)
+    use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
+
     -- UI related stuff
     use {
         'navarasu/onedark.nvim',
@@ -33,15 +39,10 @@ require('packer').startup(function(use)
             require('bufferline').setup{}
         end
     }
-    use {'nvim-lualine/lualine.nvim'} -- Fancier statusline
-
-    -- Treesitter stuff
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-
 
     -- Git Stuff
     use 'tpope/vim-fugitive'
-    use "lewis6991/gitsigns.nvim"
+    use 'lewis6991/gitsigns.nvim'
 
     -- usefull stuff
     use {
@@ -49,7 +50,7 @@ require('packer').startup(function(use)
         config = function() require("Comment").setup {} end
     }
     use {
-        "windwp/nvim-autopairs",
+        'windwp/nvim-autopairs',
         config = function() require("nvim-autopairs").setup {} end
     }
     use 'tpope/vim-surround'
