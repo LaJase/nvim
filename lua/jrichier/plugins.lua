@@ -7,12 +7,18 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     vim.cmd [[packadd packer.nvim]]
 end
 
+
 require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim' 
 
     -- Treesitter stuff
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use { -- Highlight, edit, and navigate code
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      pcall(require('nvim-treesitter.install').update { with_sync = true })
+    end,
+  }
 
     -- Fuzzy Finder (files, lsp, etc)
     use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
@@ -25,16 +31,19 @@ require('packer').startup(function(use)
         end
     }
     use 'nvim-lualine/lualine.nvim' -- Fancier statusline
+
     use {
-        'nvim-tree/nvim-tree.lua',
+	    'nvim-tree/nvim-tree.lua',
         requires = {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
+      cmd = { "NvimTreeToggle", "NvimTreeClose" },
     }
     use {
         'akinsho/bufferline.nvim',
         tag = "v3.*",
         requires = 'nvim-tree/nvim-web-devicons',
+	disable = true,
         config = function()
             require('bufferline').setup{}
         end
@@ -47,13 +56,15 @@ require('packer').startup(function(use)
     -- usefull stuff
     use {
         'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
+        keys = { 'gc', 'gcc', 'gbc' },
         config = function() require("Comment").setup {} end
     }
     use {
         'windwp/nvim-autopairs',
         config = function() require("nvim-autopairs").setup {} end
     }
-    use 'tpope/vim-surround'
+
+    use { 'tpope/vim-surround' }
 
     if is_bootstrap then
         require('packer').sync()
