@@ -9,6 +9,7 @@ lualine.setup {
     section_separators = '',
     disabled_filetypes = {
       "NvimTree",
+      "packer",
       statusline = {},
       winbar = {},
     },

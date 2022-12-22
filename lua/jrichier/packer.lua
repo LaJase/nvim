@@ -57,7 +57,7 @@ require('packer').startup(function(use)
     'akinsho/bufferline.nvim',
     tag = "v3.*",
     requires = 'nvim-tree/nvim-web-devicons',
-    disable = true,
+    event = 'TabNew',
     config = function()
       require('bufferline').setup{}
     end
