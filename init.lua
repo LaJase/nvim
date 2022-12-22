@@ -1,8 +1,8 @@
 require('jrichier.options')
 
--- require('jrichier.keymaps')
+require('jrichier.keymaps')
 
-require('jrichier.plugins')
+require('jrichier.packer')
 
 -- require('jrichier.autocommands')
 
