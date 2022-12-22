@@ -16,3 +16,6 @@ vim.keymap.set("v", ">", ">gv", {})
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
+
+-- lets try to use tab and vim fugitive
+vim.keymap.set("n", "<leader>g", "<cmd>tabnew | Git | wincmd k | bd<cr>", { desc = 'Open in new tab the vim-fugitive view' })

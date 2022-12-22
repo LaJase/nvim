@@ -15,6 +15,7 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
   renderer = {
+    group_empty = true,
     icons = {
       glyphs = {
         git = {
@@ -26,16 +27,8 @@ nvim_tree.setup {
       },
     },
   },
-  disable_netrw = true,
-  hijack_netrw = true,
   open_on_setup = false,
-  ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
-  },
-  open_on_tab = false,
-  hijack_cursor = false,
+  hijack_cursor = true,
   update_cwd = true,
   diagnostics = {
     enable = true,
