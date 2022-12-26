@@ -14,6 +14,7 @@ treesitter.setup {
     'yaml',
     'css',
     'html',
+    'bash',
     'javascript',
     'dockerfile',
     'markdown',

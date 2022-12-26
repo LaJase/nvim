@@ -10,7 +10,7 @@ end
 
 require('packer').startup(function(use)
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim' 
+  use 'wbthomason/packer.nvim'
 
   -- Treesitter stuff
   use { -- Highlight, edit, and navigate code
@@ -35,6 +35,21 @@ require('packer').startup(function(use)
     },
   }
 
+  use { -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    requires = {
+		  {'hrsh7th/cmp-buffer'},
+		  {'hrsh7th/cmp-path'},
+		  {'saadparwaiz1/cmp_luasnip'},
+		  {'hrsh7th/cmp-nvim-lsp'},
+		  {'hrsh7th/cmp-nvim-lua'},
+
+		  -- Snippets
+		  {'L3MON4D3/LuaSnip'},
+		  {'rafamadriz/friendly-snippets'},
+    }
+  }
+
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
@@ -51,13 +66,14 @@ require('packer').startup(function(use)
     'nvim-tree/nvim-tree.lua',
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
+    }
   }
   use {
     'akinsho/bufferline.nvim',
     tag = "v3.*",
     requires = 'nvim-tree/nvim-web-devicons',
     event = 'TabNew',
+    disable = true,
     config = function()
       require('bufferline').setup{}
     end
@@ -75,10 +91,11 @@ require('packer').startup(function(use)
   }
   use {
     'windwp/nvim-autopairs',
+    event = 'InsertEnter',
     config = function() require("nvim-autopairs").setup {} end
   }
 
-  use { 'tpope/vim-surround' }
+  use { 'tpope/vim-surround'--[[ , keys = { "cs", "ys" }  ]]}
 
   if is_bootstrap then
     require('packer').sync()

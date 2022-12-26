@@ -27,6 +27,8 @@ vim.opt.splitright = true                       -- force all vertical splits to 
 
 vim.opt.wrap = false
 
+vim.opt.updatetime = 300
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.opt.wrap = false                            -- display lines as one long line
