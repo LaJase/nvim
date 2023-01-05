@@ -18,6 +18,7 @@ treesitter.setup {
     'javascript',
     'dockerfile',
     'markdown',
+    'go',
   },
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },

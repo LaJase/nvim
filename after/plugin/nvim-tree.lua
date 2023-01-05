@@ -29,7 +29,7 @@ nvim_tree.setup {
   },
   open_on_setup = false,
   hijack_cursor = true,
-  update_cwd = true,
+  update_cwd = false,
   diagnostics = {
     enable = true,
     icons = {

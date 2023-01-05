@@ -9,6 +9,11 @@ vim.keymap.set("n", "<leader>wv", "<C-w>v<C-w>l", { desc = 'Split vertically the
 vim.keymap.set("n", "<leader>wo", "<C-w>o", { desc = 'Make the current window the main one' })
 vim.keymap.set("n", "<leader>wc", "<C-w>c", { desc = 'Close the current window' })
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
 -- Stay in indent mode
 vim.keymap.set("v", "<", "<gv", {})
 vim.keymap.set("v", ">", ">gv", {})
@@ -19,3 +24,13 @@ vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
 
 -- lets try to use tab and vim fugitive
 vim.keymap.set("n", "<leader>g", "<cmd>tabnew | Git | wincmd k | bd<cr>", { desc = 'Open in new tab the vim-fugitive view' })
+
+-- move lines or block
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", {})
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", {})
+
+vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi", {})
+vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", {})
+
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", {})
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", {})
