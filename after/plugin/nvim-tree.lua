@@ -41,7 +41,7 @@ nvim_tree.setup {
   },
   update_focused_file = {
     enable = true,
-    update_cwd = true,
+    update_cwd = false,
     ignore_list = {},
   },
   git = {
@@ -54,7 +54,7 @@ nvim_tree.setup {
     custom = { ".vscode" },
   },
   view = {
-    width = 35,
+    width = 55,
     hide_root_folder = false,
     side = "left",
     mappings = {

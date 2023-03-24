@@ -14,7 +14,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Stay in indent mode
+-- Stay in visual mode
 vim.keymap.set("v", "<", "<gv", {})
 vim.keymap.set("v", ">", ">gv", {})
 
@@ -23,7 +23,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
 
 -- lets try to use tab and vim fugitive
-vim.keymap.set("n", "<leader>g", "<cmd>tabnew | Git | wincmd k | bd<cr>", { desc = 'Open in new tab the vim-fugitive view' })
+vim.keymap.set("n", "<leader>gs", "<cmd>tabnew Git | Git | wincmd k | bd<cr>", { desc = '[G]it [Status] (vim fugitive)' })
+vim.keymap.set("n", "<leader>gp", "<cmd>G pull<cr>", { desc = '[G]it [P]ull'})
+vim.keymap.set("n", "<leader>gP", "<cmd>G push<cr>", { desc = '[G]it [P]ush'})
 
 -- move lines or block
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", {})
@@ -34,3 +36,8 @@ vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", {})
 
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", {})
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", {})
+
+
+-- trigger markdownpreview
+vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreview<cr>", { desc = 'Open [M]arkdown[P]review]' })
+vim.keymap.set("n", "<leader>ms", "<cmd>MarkdownPreviewStop<cr>", { desc = 'Stop [M]arkdown[P]review]' })
