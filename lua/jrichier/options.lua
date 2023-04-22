@@ -7,7 +7,7 @@ vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 vim.opt.signcolumn = 'yes'
 
@@ -36,7 +36,8 @@ vim.opt.wrap = false                            -- display lines as one long lin
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
 -- Managing trailing space
 vim.opt.listchars:append { trail = "•" }
 vim.opt.list = true
+
+vim.opt.clipboard = 'unnamedplus'
