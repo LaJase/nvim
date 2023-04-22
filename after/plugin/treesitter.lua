@@ -3,13 +3,11 @@ if not loaded then return end
 
 treesitter.setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 
+  ensure_installed = {
     'c',
     'cpp',
     'lua',
     'python',
-    'help',
-    -- 'perl',
     'json',
     'yaml',
     'css',
