@@ -9,7 +9,7 @@ treesitter.setup {
     'lua',
     'python',
     'help',
-    'perl',
+    -- 'perl',
     'json',
     'yaml',
     'css',
