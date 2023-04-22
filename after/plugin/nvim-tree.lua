@@ -11,8 +11,6 @@ if not config_status_ok then
   return
 end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
-
 nvim_tree.setup {
   renderer = {
     group_empty = true,
@@ -27,7 +25,6 @@ nvim_tree.setup {
       },
     },
   },
-  open_on_setup = false,
   hijack_cursor = true,
   update_cwd = false,
   diagnostics = {
@@ -57,14 +54,6 @@ nvim_tree.setup {
     width = 55,
     hide_root_folder = false,
     side = "left",
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-      },
-    },
     number = false,
     relativenumber = false,
   },
