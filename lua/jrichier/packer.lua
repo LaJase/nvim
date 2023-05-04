@@ -100,6 +100,12 @@ require('packer').startup(function(use)
 
     use { 'tpope/vim-surround' --[[ , keys = { "cs", "ys" }  ]] }
 
+    use {
+        "nvim-neorg/neorg",
+        run = ":Neorg sync-parsers", -- This is the important bit!
+        tags = "*",
+    }
+
     if is_bootstrap then
         require('packer').sync()
     end
