@@ -33,3 +33,5 @@ neorg.setup {
         }
     }
 }
+
+vim.opt.foldlevelstart = 99

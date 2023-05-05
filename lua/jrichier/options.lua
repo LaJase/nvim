@@ -41,9 +41,3 @@ vim.opt.listchars:append { trail = "•" }
 vim.opt.list = true
 
 vim.opt.clipboard = 'unnamedplus'
-
-vim.opt.foldlevelstart = 0
-vim.opt.foldnestmax = 1
-vim.opt.fillchars:append {
-    eob = ' ',
-}
