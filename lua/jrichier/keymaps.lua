@@ -45,3 +45,6 @@ vim.keymap.set("n", "<leader>ms", "<cmd>MarkdownPreviewStop<cr>", { desc = 'Stop
 --Neorg mapping
 vim.keymap.set("n", "<leader>ni", "<cmd>Neorg index<cr>", { desc = '[N]eorg [I]ndex' })
 vim.keymap.set("n", "<leader>nr", "<cmd>Neorg return<cr>", { desc = '[N]eorg [R]eturn' })
+
+-- Format command without tab, I hate it
+vim.keymap.set("n", "<leader>bf", "<cmd>Format<cr><cmd>retab<cr>", { desc = '[F]ormat [F]ile' })
