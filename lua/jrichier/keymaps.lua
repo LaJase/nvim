@@ -47,4 +47,7 @@ vim.keymap.set("n", "<leader>ni", "<cmd>Neorg index<cr>", { desc = '[N]eorg [I]n
 vim.keymap.set("n", "<leader>nr", "<cmd>Neorg return<cr>", { desc = '[N]eorg [R]eturn' })
 
 -- Format command without tab, I hate it
-vim.keymap.set("n", "<leader>bf", "<cmd>Format<cr><cmd>retab<cr>", { desc = '[F]ormat [F]ile' })
+vim.keymap.set("n", "<leader>fb", "<cmd>Format<cr><cmd>retab<cr>", { desc = '[F]ormat [F]ile' })
+
+-- Add date after the cursor
+vim.keymap.set("n", "<leader>ad", "A<C-R>=strftime(\" ( %d-%m-%Y )\")<CR><Esc>", { desc = '[A]dd [D]ate' })

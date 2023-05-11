@@ -1,4 +1,4 @@
-local loaded, neorg = pcall( require, 'neorg' )
+local loaded, neorg = pcall(require, 'neorg')
 if not loaded then return end
 
 neorg.setup {
@@ -11,7 +11,7 @@ neorg.setup {
         },
         ["core.concealer"] = {
             config = {
-                folds = true,
+                folds = false,
                 icons = {
                     todo = {
                         undone = {
@@ -34,4 +34,4 @@ neorg.setup {
     }
 }
 
-vim.opt.foldlevelstart = 99
+-- vim.opt.foldlevelstart = 99
