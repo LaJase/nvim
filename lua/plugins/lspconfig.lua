@@ -8,6 +8,7 @@ return {
         gopls = {},
         pyright = {},
         bashls = {},
+        dockerls = {},
       },
     },
   },
