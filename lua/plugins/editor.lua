@@ -1,6 +1,7 @@
 return {
   {
     "TimUntersberger/neogit",
+    cmd = { "Neogit" },
     dependencies = {
       "sindrets/diffview.nvim",
     },
