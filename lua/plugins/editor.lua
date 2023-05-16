@@ -41,4 +41,48 @@ return {
   { "folke/noice.nvim", enabled = false },
   { "stevearc/dressing.nvim", enabled = false },
   { "akinsho/bufferline.nvim", opts = { options = { mode = "tabs" } } },
+
+  -- Neorg
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    -- stylua: ignore
+    keys = {
+      { "<leader>ni", "<cmd>Neorg index<cr>", desc = "Open neorg" },
+      { "<leader>nr", "<cmd>Neorg return<cr>", desc = "Quit neorg" },
+    },
+    opts = {
+      load = {
+        ["core.defaults"] = {},
+        ["core.completion"] = {
+          config = {
+            engine = "nvim-cmp",
+          },
+        },
+        ["core.concealer"] = {
+          config = {
+            folds = false,
+            icons = {
+              todo = {
+                undone = {
+                  icon = " ",
+                },
+              },
+            },
+          },
+        },
+        ["core.dirman"] = {
+          config = {
+            workspaces = {
+              work = "~/notes/work",
+              home = "~/notes/home",
+            },
+            default_workspace = "work",
+            index = "index.norg",
+          },
+        },
+      },
+    },
+    dependencies = { { "nvim-lua/plenary.nvim" } },
+  },
 }

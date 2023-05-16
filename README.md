@@ -15,7 +15,9 @@ documentation.
 
 How to test it
 --------------------
+
 If you want to test my config, it is possible to do it by runnings those commands from this repo:
+
 ```bash
 source test-me.sh
 nvimtest
