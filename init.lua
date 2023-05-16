@@ -1,8 +1,2 @@
-require('jrichier.options')
-
-require('jrichier.keymaps')
-
-require('jrichier.packer')
-
-require('jrichier.autocommands')
-
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
