@@ -1,26 +1,22 @@
-local servers_requested = {
-  gopls = {},
-  pyright = {},
-  stylua = {},
-  bashls = {},
-  shfmt = {},
-}
-
 return {
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
       ---@type lspconfig.options
-      servers = servers_requested,
+      servers = {
+        gopls = {},
+        pyright = {},
+        bashls = {},
+      },
     },
   },
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = vim.tbl_keys(servers_requested),
-    },
-  },
+  -- {
+  --   "williamboman/mason.nvim",
+  --   opts = {
+  --     ensure_installed = vim.tbl_keys(servers_requested),
+  --   },
+  -- },
   {
     "jose-elias-alvarez/null-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },

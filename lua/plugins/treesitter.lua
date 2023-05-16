@@ -7,6 +7,7 @@ return {
       "c_sharp",
       "cpp",
       "css",
+      "go",
       "html",
       "javascript",
       "json",
@@ -24,4 +25,3 @@ return {
     },
   },
 }
-

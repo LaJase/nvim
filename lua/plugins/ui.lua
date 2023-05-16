@@ -6,4 +6,5 @@ return {
       style = "night",
     },
   },
+  { "folke/noice.nvim", enabled = false },
 }
