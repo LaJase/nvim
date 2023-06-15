@@ -34,6 +34,7 @@ return {
       table.insert(opts.ensure_installed, "proselint")
       table.insert(opts.ensure_installed, "write-good")
       table.insert(opts.ensure_installed, "alex")
+      table.insert(opts.ensure_installed, "isort")
     end,
   },
   { import = "lazyvim.plugins.extras.lang.typescript" },
@@ -50,12 +51,20 @@ return {
           nls.builtins.formatting.prettierd,
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.shfmt,
-          nls.builtins.formatting.autopep8,
+          nls.builtins.formatting.isort,
+          nls.builtins.formatting.autopep8.with({
+            extra_args = {
+              "--max-line-length",
+              "120",
+            },
+          }),
 
           nls.builtins.diagnostics.proselint,
           nls.builtins.code_actions.proselint,
           nls.builtins.diagnostics.alex,
-          nls.builtins.diagnostics.write_good,
+          nls.builtins.diagnostics.write_good.with({
+            extra_args = { "--no-passive" },
+          }),
         },
       }
     end,

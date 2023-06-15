@@ -47,6 +47,23 @@ return {
   { "folke/noice.nvim", enabled = false },
   { "stevearc/dressing.nvim", enabled = false },
   { "akinsho/bufferline.nvim", opts = { options = { mode = "tabs" } } },
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   opts = {
+  --     options = {
+  --       disabled_filetypes = { "neo-tree", "alpha" },
+  --       globalstatus = false,
+  --       inactive_sections = {
+  --         lualine_a = {},
+  --         lualine_b = {},
+  --         lualine_c = { "filename" },
+  --         lualine_x = { "location" },
+  --         lualine_y = {},
+  --         lualine_z = {},
+  --       },
+  --     },
+  --   },
+  -- },
 
   -- Neorg
   {
