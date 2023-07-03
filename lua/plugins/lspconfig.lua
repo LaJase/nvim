@@ -12,28 +12,12 @@ return {
         tsserver = {},
         volar = {},
       },
-      setup = {
-        -- example to setup with typescript.nvim
-        tsserver = function(_, opts)
-          require("typescript").setup({ server = opts })
-          return true
-        end,
-        -- Specify * to use this function as a fallback for any server
-        -- ["*"] = function(server, opts) end,
-      },
     },
   },
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)
-      table.insert(opts.ensure_installed, "stylua")
-      table.insert(opts.ensure_installed, "shellcheck")
-      table.insert(opts.ensure_installed, "shfmt")
       table.insert(opts.ensure_installed, "autopep8") -- python linter
-      table.insert(opts.ensure_installed, "prettierd")
-      table.insert(opts.ensure_installed, "proselint")
-      table.insert(opts.ensure_installed, "write-good")
-      table.insert(opts.ensure_installed, "alex")
       table.insert(opts.ensure_installed, "isort")
     end,
   },
@@ -41,32 +25,18 @@ return {
 
   {
     "jose-elias-alvarez/null-ls.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = { "mason.nvim" },
-    opts = function()
+    opts = function(_, opts)
       local nls = require("null-ls")
-      return {
-        root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
-        sources = {
-          nls.builtins.formatting.prettierd,
-          nls.builtins.formatting.stylua,
-          nls.builtins.formatting.shfmt,
-          nls.builtins.formatting.isort,
-          nls.builtins.formatting.autopep8.with({
-            extra_args = {
-              "--max-line-length",
-              "120",
-            },
-          }),
-
-          nls.builtins.diagnostics.proselint,
-          nls.builtins.code_actions.proselint,
-          nls.builtins.diagnostics.alex,
-          nls.builtins.diagnostics.write_good.with({
-            extra_args = { "--no-passive" },
-          }),
-        },
-      }
+      table.insert(opts.sources, nls.builtins.formatting.isort)
+      table.insert(
+        opts.sources,
+        nls.builtins.formatting.autopep8.with({
+          extra_args = {
+            "--max-line-length",
+            "120",
+          },
+        })
+      )
     end,
   },
 }
