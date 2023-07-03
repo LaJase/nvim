@@ -1,13 +1,10 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
     opts = {
-      ---@type lspconfig.options
       servers = {
         bashls = {},
         dockerls = {},
-        gopls = {},
         pyright = {},
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#omnisharp
         omnisharp = {
