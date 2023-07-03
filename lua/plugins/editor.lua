@@ -35,7 +35,7 @@ return {
     },
   },
   {
-    "TimUntersberger/neogit",
+    "NeogitOrg/neogit",
     cmd = { "Neogit" },
     keys = {
       -- stylua: ignore
