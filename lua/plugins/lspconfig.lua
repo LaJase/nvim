@@ -4,6 +4,7 @@ return {
     opts = {
       servers = {
         bashls = {},
+        volar = {},
         pyright = {},
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#omnisharp
         omnisharp = {
