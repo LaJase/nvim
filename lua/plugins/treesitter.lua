@@ -7,7 +7,6 @@ return {
       "c_sharp",
       "cpp",
       "css",
-      "dockerfile",
       "html",
       "javascript",
       "json",

@@ -65,7 +65,7 @@ return {
       },
     },
   },
-  { "mini.indentscope", enabled = false },
+  -- { "mini.indentscope", enabled = false },
   { "folke/neoconf.nvim", enabled = false },
   { "folke/noice.nvim", enabled = false },
   { "stevearc/dressing.nvim", enabled = false },
