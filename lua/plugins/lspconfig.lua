@@ -40,6 +40,8 @@ return {
     opts = function(_, opts)
       table.insert(opts.ensure_installed, "autopep8") -- python linter
       table.insert(opts.ensure_installed, "isort")
+      table.insert(opts.ensure_installed, "gofumpt")
+      table.insert(opts.ensure_installed, "goimports-reviser")
     end,
   },
   { import = "lazyvim.plugins.extras.lang.typescript" },
