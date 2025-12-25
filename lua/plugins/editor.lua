@@ -1,5 +1,20 @@
 return {
   {
+    "navarasu/onedark.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      style = "darker",
+    },
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "onedark",
+    },
+  },
+
+  {
     "folke/flash.nvim",
     event = "VeryLazy",
     ---@type Flash.Config
