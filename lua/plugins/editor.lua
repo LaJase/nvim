@@ -17,6 +17,7 @@ return {
     "folke/snacks.nvim",
     opts = {
       zen = { enabled = false },
+      bigfile = { size = 5 * 1024 * 1024 }, -- 5MB
     },
     keys = {
       { "<leader>uz", false },
